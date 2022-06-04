@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1654359844 source:e:\Ñ++\popitka\lab03\test.cpp
+	"histogram.h"
+	<cassert>
+
+1654353037 e:\Ñ++\popitka\lab03\histogram.h
+	<vector>
+	<iostream>
+
