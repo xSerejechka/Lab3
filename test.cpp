@@ -2,8 +2,7 @@
 
 #include <cassert>
 
-void
-test_positive()
+void test_positive()
 {
     double min = 0;
     double max = 0;
@@ -12,56 +11,57 @@ test_positive()
     assert(max == 3);
 }
 
-void
-test_negative()
-{
-    double min = 0;
-    double max = 0;
+void test_negative() {
+    double min = -1000;
+    double max = -1000;
     find_minmax({-1, -2, -3}, min, max);
     assert(min == -3);
     assert(max == -1);
-    return;
 }
 
-void
-test_identic()
-{
-    double min = 0;
-    double max = 0;
-    find_minmax({5, 5, 5}, min, max);
-    assert(min == 5);
-    assert(max == 5);
-    return;
+void test_equal() {
+    double min = -3000;
+    double max = -1000;
+    find_minmax({1, 1, 1}, min, max);
+    assert(min == 1);
+    assert(max == 1);
 }
 
-void
-test_one()
-{
-    double min = 0;
-    double max = 0;
+void test_solo() {
+    double min = -3000;
+    double max = -1000;
     find_minmax({1}, min, max);
     assert(min == 1);
     assert(max == 1);
-    return;
 }
 
-void
-test_void()
-{
-    double min=0;
-    double max=0;
+void test_zero() {
+    double min = -3000;
+    double max = -1000;
     find_minmax({}, min, max);
-    assert(min == 0);
-    assert(max == 0);
-    return;
+    assert(min == -3000);
+    assert(max == -1000);
 }
 
-int
-main()
+void check_colour_positive() {
+    assert(check_color("green") == true);
+    assert(check_color("red") == true);
+    assert(check_color("#010101") == true);
+}
+
+void check_colour_negative() {
+    assert(check_color("gre en") == false);
+    assert(check_color("423 255") == false);
+    assert(check_color("") == false);
+}
+
+int main()
 {
     test_positive();
     test_negative();
-    test_identic();
-    test_one();
-    test_void();
+    test_equal();
+    test_solo();
+    test_zero();
+    check_colour_positive();
+    check_colour_negative();
 }
