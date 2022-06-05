@@ -16,10 +16,55 @@
 
 1654423270 e:\Ñ++\popitka\lab03\svg.h
 
-1654436757 source:e:\Ñ++\popitka\lab03\main.cpp
+1654438137 source:e:\Ñ++\popitka\lab03\main.cpp
 	<iostream>
 	<string>
 	<vector>
 	"svg.h"
 	"histogram.h"
+	<curl/curl.h>
+
+1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"options.h"
+	"header.h"
+	"typecheck-gcc.h"
+
+1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\curlver.h
+
+1654437032 e:\Ñ++\popitka\lab03\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\easy.h
+
+1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\multi.h
+	"curl.h"
+
+1654437032 e:\Ñ++\popitka\lab03\curl\include\curl\urlapi.h
+	"curl.h"
+
+1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\options.h
+
+1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\header.h
+
+1654437032 e:\Ñ++\popitka\lab03\curl\include\curl\typecheck-gcc.h
 

@@ -3,6 +3,7 @@
 #include <vector>
 #include "svg.h"
 #include "histogram.h"
+#include <curl/curl.h>
 
 using namespace std;
 
@@ -128,6 +129,7 @@ void show_histogram_text(vector<size_t> bins) {
 int main()
 {
 	//Ввод данных
+	curl_global_init(CURL_GLOBAL_ALL);
 	const auto input = read_input(cin, true);
 
 	//Расчёт Гистограммы
