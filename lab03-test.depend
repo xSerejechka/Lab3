@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1654419354 source:e:\Ñ++\popitka\lab03\test.cpp
+	"histogram.h"
+	<cassert>
+
+1654418484 e:\Ñ++\popitka\lab03\histogram.h
+	<vector>
+	<iostream>
+
+1654357989 source:e:\Ñ++\popitka\lab03\svg.cpp
+	<iostream>
+	<vector>
+	"svg.h"
+
+1654353037 e:\Ñ++\popitka\lab03\svg.h
+
+1654418484 source:e:\Ñ++\popitka\lab03\histogram.cpp
+	<vector>
+	"histogram.h"
+	<iostream>
+	<string>
+
