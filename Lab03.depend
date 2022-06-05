@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1654359794 source:e:\Ñ++\popitka\lab03\histogram.cpp
+1654423421 source:e:\Ñ++\popitka\lab03\histogram.cpp
 	<vector>
 	"histogram.h"
 	<iostream>
 	<string>
 
-1654353037 e:\Ñ++\popitka\lab03\histogram.h
+1654423000 e:\Ñ++\popitka\lab03\histogram.h
 	<vector>
 	<iostream>
 
@@ -14,9 +14,9 @@
 	<vector>
 	"svg.h"
 
-1654353037 e:\Ñ++\popitka\lab03\svg.h
+1654423270 e:\Ñ++\popitka\lab03\svg.h
 
-1654355203 source:e:\Ñ++\popitka\lab03\main.cpp
+1654423421 source:e:\Ñ++\popitka\lab03\main.cpp
 	<iostream>
 	<string>
 	<vector>

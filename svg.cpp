@@ -3,8 +3,7 @@
 #include "svg.h"
 using namespace std;
 
-void svg_begin(double width, double height)
-{
+void svg_begin(double width, double height){
     cout << "<?xml version='1.0' encoding='UTF-8'?>\n";
     cout << "<svg ";
     cout << "width='" << width << "' ";
@@ -14,8 +13,7 @@ void svg_begin(double width, double height)
 }
 
 
-void svg_end()
-{
+void svg_end() {
     cout << "</svg>\n";
 }
 
@@ -25,13 +23,12 @@ void svg_text(double left, double baseline, string text){
 }
 
 
-void svg_rect(double x, double y, double width, double height, string stroke = "black", string fill = "black") {
+void svg_rect(double x, double y, double width, double height, string stroke = "red(Safe 16 Hex3)", string fill = "#FF0000") {
     cout << "<rect x='" << x << "' y='" << y << "' width='" << width << "' height='" << height << "' stroke='" << stroke << "' fill='" << fill << "' />\n";
 }
 
 
-void show_histogram_svg(const vector<size_t>& bins, vector<string> colours)
-{
+void show_histogram_svg(const vector<size_t>& bins){
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 300;
     const auto TEXT_LEFT = 20;
@@ -41,10 +38,8 @@ void show_histogram_svg(const vector<size_t>& bins, vector<string> colours)
     const auto BLOCK_WIDTH = 10;
 
     size_t max_count = bins[0];
-    for (size_t bin : bins)
-    {
-        if (max_count < bin)
-        {
+    for (size_t bin : bins){
+        if (max_count < bin){
             max_count = bin;
         }
     }
@@ -54,13 +49,12 @@ void show_histogram_svg(const vector<size_t>& bins, vector<string> colours)
     double top = 0;
     for (size_t i = 0; i < bins.size(); i++) {
         size_t height = bins[i] * BLOCK_WIDTH;
-        if (max_count * BLOCK_WIDTH > IMAGE_WIDTH - TEXT_WIDTH)
-        {
+        if (max_count * BLOCK_WIDTH > IMAGE_WIDTH - TEXT_WIDTH){
             height = (IMAGE_WIDTH - TEXT_WIDTH) * (static_cast<double>(bins[i]) / max_count);
         }
         const double bin_width = height;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bins[i]));
-        svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, colours[i], colours[i]);
+        svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
         top += BIN_HEIGHT;
     }
 
@@ -69,13 +63,12 @@ void show_histogram_svg(const vector<size_t>& bins, vector<string> colours)
 
     for (size_t i = 0; i < bins.size(); i++) {
         size_t height = bins[i] * BLOCK_WIDTH;
-        if (max_count * BLOCK_WIDTH > IMAGE_WIDTH - TEXT_WIDTH)
-        {
+        if (max_count * BLOCK_WIDTH > IMAGE_WIDTH - TEXT_WIDTH){
             height = (IMAGE_WIDTH - TEXT_WIDTH) * (static_cast<double>(bins[i]) / max_count);
         }
         const double bin_width = height;
         svg_text(IMAGE_WIDTH - 25, top + TEXT_BASELINE, to_string(bins[i]));
-        svg_rect(IMAGE_WIDTH - TEXT_WIDTH - bin_width + TEXT_LEFT, top, bin_width, BIN_HEIGHT, colours[i], colours[i]);
+        svg_rect(IMAGE_WIDTH - TEXT_WIDTH - bin_width + TEXT_LEFT, top, bin_width, BIN_HEIGHT);
         top += BIN_HEIGHT;
     }
     svg_end();

@@ -6,8 +6,7 @@
 
 using namespace std;
 
-vector<double>
-input_numbers(size_t count) {
+vector<double> input_numbers(size_t count) {
 	vector<double> result(count);
 	for (size_t i = 0; i < count; i++) {
 		cin >> result[i];
@@ -15,8 +14,7 @@ input_numbers(size_t count) {
 	return result;
 }
 
-vector<size_t>
-make_histogram(const vector<double>& numbers, size_t bin_count) {
+vector<size_t> make_histogram(const vector<double>& numbers, size_t bin_count) {
 	vector<size_t> result(bin_count, 0);
 	double max; double min;
 	find_minmax(numbers, min, max);
@@ -39,8 +37,7 @@ make_histogram(const vector<double>& numbers, size_t bin_count) {
 	return result;
 }
 
-void
-show_histogram_text(vector<size_t> bins) {
+void show_histogram_text(vector<size_t> bins) {
 	const size_t SCREEN_WIDTH = 80;
 	const size_t MAX_ASTERISK = SCREEN_WIDTH - 4 - 1;
 
@@ -105,18 +102,6 @@ show_histogram_text(vector<size_t> bins) {
 	}
 }
 
-vector<string> input_colours(size_t bin_count) {
-    vector<string> colours(bin_count);
-    for (int i = 0; i < bin_count; i++) {
-        cerr << "Enter bin " << i + 1 << " colour: ";
-        cin >> colours[i];
-        while (!check_color(colours[i])) {
-            cin >> colours[i];
-        }
-    }
-    return colours;
-}
-
 int main()
 {
 	//Ввод данных
@@ -132,9 +117,8 @@ int main()
 
 	//Расчёт Гистограммы
 	const auto bins = make_histogram(numbers, bin_count);
-    const auto colours = input_colours(bin_count);
 
 	//Вывод данных
-    show_histogram_svg(bins, colours);
+    show_histogram_svg(bins);
 	return 0;
 }

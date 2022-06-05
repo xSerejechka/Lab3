@@ -1,67 +1,19 @@
 #include "histogram.h"
-
+#include <vector>
 #include <cassert>
+using namespace std;
 
-void test_positive()
-{
+void
+test_positive() {
+    vector <double> test = {1.0, 2.0, 3.0};
     double min = 0;
     double max = 0;
-    find_minmax({1, 2, 3}, min, max);
-    assert(min == 1);
-    assert(max == 3);
+    find_minmax(test, min, max);
+    assert(min == 1.0);
+    assert(max == 3.0);
 }
 
-void test_negative() {
-    double min = -1000;
-    double max = -1000;
-    find_minmax({-1, -2, -3}, min, max);
-    assert(min == -3);
-    assert(max == -1);
-}
-
-void test_equal() {
-    double min = -3000;
-    double max = -1000;
-    find_minmax({1, 1, 1}, min, max);
-    assert(min == 1);
-    assert(max == 1);
-}
-
-void test_solo() {
-    double min = -3000;
-    double max = -1000;
-    find_minmax({1}, min, max);
-    assert(min == 1);
-    assert(max == 1);
-}
-
-void test_zero() {
-    double min = -3000;
-    double max = -1000;
-    find_minmax({}, min, max);
-    assert(min == -3000);
-    assert(max == -1000);
-}
-
-void check_colour_positive() {
-    assert(check_color("green") == true);
-    assert(check_color("red") == true);
-    assert(check_color("#010101") == true);
-}
-
-void check_colour_negative() {
-    assert(check_color("gre en") == false);
-    assert(check_color("423 255") == false);
-    assert(check_color("") == false);
-}
-
-int main()
-{
+int
+main() {
     test_positive();
-    test_negative();
-    test_equal();
-    test_solo();
-    test_zero();
-    check_colour_positive();
-    check_colour_negative();
 }
