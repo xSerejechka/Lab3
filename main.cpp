@@ -4,6 +4,8 @@
 #include "svg.h"
 #include "histogram.h"
 #include <curl/curl.h>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -126,11 +128,32 @@ void show_histogram_text(vector<size_t> bins) {
 	}
 }
 
-int main()
-{
-	//Ввод данных
-	curl_global_init(CURL_GLOBAL_ALL);
-	const auto input = read_input(cin, true);
+Input
+download(const string& address) {
+    stringstream buffer;
+
+    CURL *curl = curl_easy_init();
+        if(curl) {
+            CURLcode res;
+            curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
+            res = curl_easy_perform(curl);
+            if (res != CURLE_OK) {
+                cerr << curl_easy_strerror(res) << endl;
+                exit(1);
+            }
+            curl_easy_cleanup(curl);
+        }
+
+    return read_input(buffer, false);
+}
+
+int main(int argc, char* argv[]) {
+	Input input;
+    if (argc > 1) {
+        input = download(argv[1]);
+    } else {
+        input = read_input(cin, true);
+    }
 
 	//Расчёт Гистограммы
 	const auto bins = make_histogram(input);
