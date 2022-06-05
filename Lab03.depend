@@ -16,13 +16,15 @@
 
 1654423270 e:\Ñ++\popitka\lab03\svg.h
 
-1654440577 source:e:\Ñ++\popitka\lab03\main.cpp
+1654442735 source:e:\Ñ++\popitka\lab03\main.cpp
 	<iostream>
 	<string>
 	<vector>
 	"svg.h"
 	"histogram.h"
 	<curl/curl.h>
+	<sstream>
+	<string>
 
 1654437031 e:\Ñ++\popitka\lab03\curl\include\curl\curl.h
 	"curlver.h"
