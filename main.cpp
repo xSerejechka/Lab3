@@ -137,7 +137,6 @@ size_t write_data(void* items, size_t item_size, size_t item_count, void* ctx) {
 
 Input download(const string& address) {
     stringstream buffer;
-
     CURL *curl = curl_easy_init();
         if(curl) {
             CURLcode res;
@@ -156,11 +155,11 @@ Input download(const string& address) {
 }
 
 int main(int argc, char* argv[]) {
-	Input input;
+	Input data;
     if (argc > 1) {
-        input = download(argv[1]);
+        data = download(argv[1]);
     } else {
-        input = read_input(cin, true);
+        data = read_input(cin, true);
     }
 
 	//Расчёт Гистограммы
