@@ -13,4 +13,5 @@
 <rect x='255' y='150' width='115' height='30' stroke='red(Safe 16 Hex3)' fill='#FF0000' />
 <text x='375' y='200'>100</text>
 <rect x='20' y='180' width='350' height='30' stroke='red(Safe 16 Hex3)' fill='#FF0000' />
+<text x='20' y='230'>Windows v6.2 (build 9200) DESKTOP-NQDMER8</text>
 </svg>

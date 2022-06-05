@@ -4,6 +4,7 @@
 #include "svg.h"
 #include "histogram.h"
 
+
 using namespace std;
 
 vector<double> input_numbers(size_t count) {
