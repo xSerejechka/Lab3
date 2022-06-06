@@ -149,7 +149,7 @@ size_t write_data(void* items, size_t item_size, size_t item_count, void* ctx) {
     return data_size;
 }
 
-Input download(const string& address) {
+Input download(const string& address, int cnt = 0) {
     stringstream buffer;
     CURL* curl = curl_easy_init();
     if (curl) {
@@ -164,16 +164,19 @@ Input download(const string& address) {
         }
         curl_easy_cleanup(curl);
     }
-
-    return read_input(buffer, false);
+    if (cnt > 0) {
+        return read_input(buffer, false, cnt);
+    } else{
+        return read_input(buffer, false);
+    }
 }
 
 int main(int argc, char* argv[]) {
     Input data;
     int cnt;
-    bool hislo;
-    if (argc > 1)
-    {
+    bool hislo = false;
+    bool silka = false;
+    if (argc > 1) {
         string url;
         for (int i = 1; i < argc; i++) {
             if (strstr(argv[i], "-generate")) {
@@ -186,12 +189,13 @@ int main(int argc, char* argv[]) {
                     hislo = true;
                 }
             }
-            if (strstr(argv[i], "http://")) {
+            if ((strstr(argv[i], "http://"))||(strstr(argv[i], "file://"))) {
                 url = argv[i];
+                silka = true;
             }
         }
-        if (hislo) {
-            data = read_input(cin, true, cnt);
+        if ((hislo)&&(silka)) {
+            data = download(url, cnt);
         } else {
             data = download(url);
         }

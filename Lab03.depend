@@ -9,10 +9,12 @@
 	<vector>
 	<iostream>
 
-1654504608 source:e:\Ñ++\popitka\lab03\svg.cpp
+1654509247 source:e:\Ñ++\popitka\lab03\svg.cpp
 	<iostream>
 	<vector>
 	"svg.h"
+	<windows.h>
+	<sstream>
 
 1654522858 e:\Ñ++\popitka\lab03\svg.h
 
